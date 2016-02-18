@@ -1,0 +1,8 @@
+name: TECoreV2
+version: 1.0
+author: mfunGamer
+main: io.teamelite.TEMainCore
+commands:
+  test:
+    usage: /test
+    description: test
