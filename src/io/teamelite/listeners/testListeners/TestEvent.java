@@ -1,4 +1,4 @@
-package io.teamelite.plugins.test.events;
+package io.teamelite.listeners.testListeners;
 
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

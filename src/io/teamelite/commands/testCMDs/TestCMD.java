@@ -1,4 +1,4 @@
-package io.teamelite.plugins.test.commands;
+package io.teamelite.commands.testCMDs;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;

@@ -1,8 +1,9 @@
 package io.teamelite.plugins.test;
 
+
 import io.teamelite.CorePlugin;
-import io.teamelite.plugins.test.commands.TestCMD;
-import io.teamelite.plugins.test.events.TestEvent;
+import io.teamelite.commands.testCMDs.TestCMD;
+import io.teamelite.listeners.testListeners.TestEvent;
 
 public class Test extends CorePlugin{
 
