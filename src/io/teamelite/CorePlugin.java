@@ -12,15 +12,18 @@ public abstract class CorePlugin{
 	
 	private String name;
 	
-	private final String prefix = "[TECore]";
+	protected final String prefix = "[TECore]";
 	
 	public void init(TEMainCore corearg) throws InvalidValue{
 		core = corearg;
 		name = getPluginName();
+		if(name==null){
+			throw new InvalidValue("name can not be null");
+		}
 		for(CorePlugin p : core.Plugins){
 			if(!p.equals(this)){
 				if(p.getPluginName().equals(name)){
-					throw new InvalidValue(name);
+					throw new InvalidValue("Duplicate name: "+name);
 				}
 			}
 		}
@@ -39,8 +42,7 @@ public abstract class CorePlugin{
 	
 	public abstract void registerEvents();
 	
-	@SuppressWarnings("unused")
-	private Player getPlayer(String playerName){
+	protected Player getPlayer(String playerName){
 		Object[] playerlist = Bukkit.getServer().getOnlinePlayers().toArray();
 		
 		for(Object Playerobject : playerlist){
@@ -58,7 +60,7 @@ public abstract class CorePlugin{
 	}
 	
 	public void registerCommand(String commandName, CommandExecutor executor){
-		core.getCommand(name).setExecutor(executor);
+		core.getCommand(commandName).setExecutor(executor);
 	}
 	
 	public void registerEvent(Listener listener){
